@@ -15,7 +15,8 @@ class User(db.Model):
 	
 
 
-	def __init__(self,username, img,fname, lname,, profile_add_on,sex,age,high_score,tdollars):
+	def __init__(self, userid, username, img,fname, lname,, profile_add_on,sex,age):
+	   self.userid = userid
 	   self.username=username 
 	   self.img = img
 	   self.fname = fname
@@ -23,8 +24,7 @@ class User(db.Model):
            self.profile_add_on=profile_add_on
            self.sex = sex
            self.age = age
-           self.high_score=high_score
-           self.tdollars=tdollars
+          
            
 
         def __repr__(self):
