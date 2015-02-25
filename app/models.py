@@ -1,26 +1,30 @@
 from app import db
 
-    class User(db.Model):
-        __tablename__ = 'users_user'
+class User(db.Model):
+	__tablename__ = 'users_user'
         userid = db.Column(db.Integer,nullable = False, primary_key=True)
 	userName = db.Column(db.String(50), Unique=True)
 	img = db.Column(db.LargeBinary)
-	profiledate=db.Column(db.DateTime)
         fname = db.Column(db.String(50), unique=True)
         lname = db.Column(db.String(50), unique=True)
         sex=db.Column(db.String(10))
 	age = db.Column(db.Integer)
+	profile_add_on=db.Column(db.DateTime)
+	high_score =db.Column(db.Integer)
+	tDollars =db.Column(db.Integer)
 	
 
 
-	def __init__(self,username, img, profileDate,fname, lname,sex,age):
+	def __init__(self,username, img,fname, lname,, profile_add_on,sex,age,high_score,tdollars):
 	   self.username=username 
 	   self.img = img
-	   self.profileDate=profileDate
 	   self.fname = fname
            self.lname = lname
+           self.profile_add_on=profile_add_on
            self.sex = sex
            self.age = age
+           self.high_score=high_score
+           self.tdollars=tdollars
            
 
         def __repr__(self):
